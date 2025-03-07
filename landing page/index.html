@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page by Archita Srivastava</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: whitesmoke;
+            color: darkcyan;
+            font-family: "Lato", serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: lightblue;
+            padding: 0 40px;
+        }
+
+        main{
+            margin-top: 120px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(67, 58, 131);
+            font-size: 1rem;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: rgb(16, 147, 235);
+            font-size: 1.04rem;
+        }
+
+        .left {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 80px auto;
+            padding: 20px;
+            width: 80%;
+        }
+
+        .leftSection {
+            font-size: 4rem;
+            width: 50%;
+            font-weight: bold;
+        }
+
+        .leftSection div {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        .rightSection {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .rightSection img {
+            width: 120%;
+            max-width: 500px;
+            border-radius: 10px;
+            height: auto;
+        }
+
+        .lightseagreen {
+            color: rgb(12, 64, 98);
+        }
+
+        #element {
+            color: rgb(16, 147, 235);
+            font-weight: bold;
+            font-size: 3rem;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+        color: rgb(30, 19, 19); /* Color for the heading */
+        text-align: center; /* Center align the heading */
+        margin-bottom: 20px; /* Add some space below the heading */
+        font-size: 2.5rem; /* Adjust font size */
+        font-weight: bold; /* Make the text bold */
+}
+
+
+        .about{
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: lightblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            padding: 50px 80px;
+            border: 2px solid black;
+            background-color: rgb(162, 222, 242);
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            margin: 40px auto;
+            text-align: center;
+            color: black;
+        }
+
+        .company img {
+        width: 150px; 
+        height: auto;
+        max-width: 100%; 
+        }
+
+        .leftContent {
+            flex: 1; /* Ensures the left content takes up available space */
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: left; /* Align text to the left */
+            padding-right: 20px; /* Add space between text and image */
+        }
+
+        .rightContent {
+            flex: 1; /* Ensures the right content takes up available space */
+            display: flex;
+            justify-content: flex-end; /* Aligns the image to the right */
+        }
+
+        .rightContent img {
+            width: 20%; 
+            height: auto;
+            max-width: 100%; 
+            border-radius: 10px; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; 
+            align-items: center;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: rgb(74, 177, 170);
+            color: white;
+        }
+
+        td {
+            background-color: rgb(215, 243, 254);
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            background-color: rgb(93, 95, 97);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2rem;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styles to Stick it at the Bottom */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(93, 95, 97);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Archita's Fitness</div data-aos="fade-up">
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pay">Payments</a></li>
+                    <li><a href="#award">Awards</a></li>
+                    <li><a href="#train">Trainers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section home" id="home" data-aos="fade-up">
+        <section class="firstSection">
+            <div class="leftSection">
+                Welcome To <span class="lightseagreen">Archita's Fitness</span>
+                <div>
+                    <span id="element"></span>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="pngwing.com.png" alt="Gym Image" data-aos="fade-up">
+            </div>
+        </section>
+        </section>
+        <section class="content" id="about" data-aos="fade-up">
+        <section class="section about" id="about" data-aos="fade-up">
+            <h2>About</h2>
+            <p>At Archita's Fitness, we believe in empowering individuals to lead healthier, stronger lives through personalized fitness journeys. Founded with a passion for promoting well-being, our gym offers state-of-the-art equipment, expert trainers, and a motivating community to help you achieve your fitness goals.
+
+                Whether you are aiming to build strength, improve flexibility, or enhance your cardiovascular health, we provide a variety of fitness programs tailored to meet your needs. From intense weight training and cardio workouts to calming yoga and functional fitness, there's something for everyone at Archita's Fitness.
+                
+                Our goal is not just about physical transformation, but also fostering mental and emotional well-being. Join us and experience a supportive environment where you can thrive, reach your full potential, and become the best version of yourself.
+                
+                We are more than just a gym—Archita's Fitness is a community that strives for progress, dedication, and most importantly, health. Come work with us and let’s build a healthier future together!
+                
+                .</p>
+            <div class="company">
+                <img src="gymlogo.png" alt="Company Logo" data-aos="fade-up">
+            </div>
+        </section>
+        </section>
+        <section class="section pay" id="pay">
+            <h2>Payment Details</h2>
+            <table border="1" cellspacing="0" cellpadding="10" data-aos="fade-up">
+                <!-- Table Header Row -->
+                <tr>
+                    <th>Plans</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                </tr>
+            
+                <!-- Table Data Row 1 -->
+                <tr>
+                    <td>Diamond Package</td>
+                    <td>2 Years</td>
+                    <td>10501/-</td>
+                </tr>
+            
+                <!-- Table Data Row 2 -->
+                <tr>
+                    <td>Gold Package</td>
+                    <td>1 Year</td>
+                    <td>6501</td>
+                </tr>
+            
+                <!-- Table Data Row 3 -->
+                <tr>
+                    <td>Silver</td>
+                    <td>6 Months</td>
+                    <td>3801/-</td>
+                </tr>
+            </table>
+            
+
+        </section>
+        <section class="section award" id="award" data-aos="fade-up">
+            <h2>Awards</h2>
+            <div class="leftContent" data-aos="fade-up">
+                Won <b>First</b>place all over <span class="lightseagreen">India</span> for <b>Facilities</b> and <b>Trainies</b>
+            </div>
+            <div class="rightContent" data-aos="fade-up">
+                <img src="award 1.png" alt="Gym Image" data-aos="fade-up">
+
+            </div>
+        </section>
+        <section class="section award" id="award" data-aos="fade-up">
+            <div class="leftContent">
+                Won <b>First</b>Rank all over <span class="lightseagreen" data-aos="fade-up">India</span> <b>2025</b>
+            </div>
+            <div class="rightContent" data-aos="fade-up">
+                <img src="award 2.png" alt="Gym Image" data-aos="fade-up">
+
+            </div>
+        </section>
+        <section class="section award" id="award" data-aos="fade-up">
+            <div class="leftContent" data-aos="fade-up">
+                Won <b>First</b>Prize all over <span class="lightseagreen">India</span> As best Gym in 2025</b>
+            </div>
+            <div class="rightContent" data-aos="fade-up">
+                <img src="award 3.png" alt="Gym Image">
+
+            </div>
+        </section>
+        <section class="section train" id="train" data-aos="fade-up">
+            <h2>Trainers details</h2>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <!-- Table Header Row -->
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Experience</th>
+                    <th>speciality</th>
+                </tr>
+            
+                <!-- Table Data Row 1 -->
+                <tr>
+                    <td>Shreya Sinha</td>
+                    <td>Female</td>
+                    <td>25 years</td>
+                    <td>Yoga</td>
+                </tr>
+
+                <tr>
+                    <td>Raghav Modan</td>
+                    <td>Male</td>
+                    <td>26 years</td>
+                    <td>Yoga</td>
+                </tr>
+            
+                <!-- Table Data Row 2 -->
+                <tr>
+                    <td>Madhur Sharma</td>
+                    <td>Male</td>
+                    <td>10 years</td>
+                    <td>Iron Gym</td>
+                </tr>
+            
+                <!-- Table Data Row 3 -->
+                <tr>
+                    <td>Ananya tilak</td>
+                    <td>Female</td>
+                    <td>12 years</td>
+                    <td>Iron Gym</td>
+                </tr>
+
+                <tr>
+                    <td>Pooja Shukla</td>
+                    <td>Female</td>
+                    <td>12 years</td>
+                    <td>Cardio Expert</td>
+                </tr>
+
+                <tr>
+                    <td>Anshu mital</td>
+                    <td>Male</td>
+                    <td>20 years</td>
+                    <td>Cardio Expert</td>
+                </tr>
+            </table>
+
+        </section>
+
+        <section class="section contact" id="contact" data-aos="fade-up">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out!</p>
+            <div class="contact-info" data-aos="fade-up">
+                <p>Email: <a href="mailto:archita@example.com">archita@example.com</a></p>
+                <p>Phone: +91 123 456 7890</p>
+                <p>Address: 123 Fitness Street, Healthy City, India</p>
+            </div>
+        </section>
+        
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Iron', 'Cardio', 'Yoga', 'Workouts'],
+            typeSpeed: 50,
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000, // Animation duration
+        easing: 'ease-in-out', // Easing effect
+        once: true, // Only animate once
+    });
+    </script>
+
+</body>
+</html>

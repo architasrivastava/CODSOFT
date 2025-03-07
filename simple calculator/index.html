@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+
+        .calculator {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 320px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .calculator:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #fb6ef2;
+            outline: none;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #db5ab4, #9258c8);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .success {
+            color: #28a745;
+        }
+
+        .error {
+            color: #dc3545;
+        }
+
+        .number-pad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .number-pad button {
+            font-size: 20px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .number-pad button:hover {
+            background-color: #dedede;
+        }
+
+        #clear, #enter {
+            background-color: #ff6b6b;
+            color: white;
+            font-weight: bold;
+        }
+
+        #clear:hover, #enter:hover {
+            background-color: #ff4757;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        #result.show {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <h2>Simple Calculator by Archita</h2>
+    <input type="text" id="num1" placeholder="Enter number 1" readonly>
+    <input type="text" id="num2" placeholder="Enter number 2" readonly>
+    <select id="operation">
+        <otpion value="Select any operation">Select</otpion>
+        <option value="sum">Sum</option>
+        <option value="product">Product</option>
+        <option value="difference">Difference</option>
+        <option value="remainder">Remainder</option>
+        <option value="quotient">Quotient</option>
+        <option value="power">Power</option>
+        <option value="sqrt">Square Root</option>
+        <option value="square">Square</option>
+    </select>
+    <button onclick="performCalculation()">Calculate</button>
+    
+    <div class="number-pad">
+        <button onclick="appendNumber(1)">1</button>
+        <button onclick="appendNumber(2)">2</button>
+        <button onclick="appendNumber(3)">3</button>
+        <button onclick="appendNumber(4)">4</button>
+        <button onclick="appendNumber(5)">5</button>
+        <button onclick="appendNumber(6)">6</button>
+        <button onclick="appendNumber(7)">7</button>
+        <button onclick="appendNumber(8)">8</button>
+        <button onclick="appendNumber(9)">9</button>
+        <button onclick="appendNumber(0)">0</button>
+        <button id="clear" onclick="clearInput()">Clear</button>
+        <button id="enter" onclick="enterNumber()">Enter</button>
+    </div>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    let currentNumber = '';
+    let currentInput = document.getElementById('num1');
+
+    function appendNumber(number) {
+        currentNumber += number;
+        currentInput.value = currentNumber;
+    }
+
+    function clearInput() {
+    currentNumber = '';
+    document.getElementById('num1').value = '';  
+    document.getElementById('num2').value = '';
+    currentInput = document.getElementById('num1');
+    }
+
+    function enterNumber() {
+        if (currentInput === document.getElementById('num1')) {
+            currentInput = document.getElementById('num2');
+        } else {
+            performCalculation();
+        }
+        currentNumber = '';
+        currentInput.value = '';
+    }
+
+    function performCalculation() {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        const operation = document.getElementById('operation').value;
+        const resultDiv = document.getElementById('result');
+        let result = '';
+
+        if (isNaN(num1)) {
+            resultDiv.textContent = "Please enter a valid number for Number 1.";
+            resultDiv.className = "error show";
+            return;
+        }
+
+        switch (operation) {
+            case 'sum':
+                if (isNaN(num2)) return showError("Please enter a valid number for Number 2.");
+                result = num1 + num2;
+                break;
+            case 'product':
+                if (isNaN(num2)) return showError("Please enter a valid number for Number 2.");
+                result = num1 * num2;
+                break;
+            case 'difference':
+                if (isNaN(num2)) return showError("Please enter a valid number for Number 2.");
+                result = num1 - num2;
+                break;
+            case 'remainder':
+                if (isNaN(num2)) return showError("Please enter a valid number for Number 2.");
+                result = num1 % num2;
+                break;
+            case 'quotient':
+                if (isNaN(num2)) return showError("Please enter a valid number for Number 2.");
+                if (num2 === 0) {
+                    return showError("Cannot divide by zero");
+                } else {
+                    result = num1 / num2;
+                }
+                break;
+            case 'power':
+                if (isNaN(num2)) return showError("Please enter a valid number for Number 2.");
+                result = Math.pow(num1, num2);
+                break;
+            case 'sqrt':
+                if (num1 < 0) {
+                    return showError("Square root is not defined for negative numbers.");
+                } else {
+                    result = `√${num1} = ${Math.sqrt(num1)}`;
+                }
+                break;
+            case 'square':
+                result = `${num1}² = ${Math.pow(num1, 2)}`;
+                break;
+            default:
+                return showError("Invalid operation");
+        }
+
+        resultDiv.textContent = `Result: ${result}`;
+        resultDiv.className = "success show";
+    }
+
+    function showError(message) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.textContent = message;
+        resultDiv.className = "error show";
+    }
+</script>
+</body>
+</html>

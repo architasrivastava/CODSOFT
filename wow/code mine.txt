@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website By Archita Srivastava</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #1e1e2e;
+            color: white;
+            font-family: "Lato", sans-serif;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: #008080;
+        }
+        nav ul{
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li{
+            list-style: none;
+            margin: 0 15px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+        }
+        nav ul li a:hover{
+            color: lightcyan;
+        }
+
+        .left{
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .firstSection{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 100px;
+        }
+
+        .firstSection .leftSection{
+            font-size: 2rem;
+            width: 50%;
+        }
+
+        .rightSection img{
+            width: 300px;
+            border-radius: 50%;
+        }
+
+        .highlight{
+            color: #76eec6;
+        }
+
+        #element{
+            color: lightseagreen;
+        }
+
+        .section{
+            padding: 50px;
+            text-align: center;
+        }
+
+        .contact{
+            background-color: #282a36;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .education, .projects, .technical{
+            background-color: darkcyan;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .interships, .certificates, .achievements, .resume{
+            background-color: darkcyan;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .worshops{
+            background-color: darkcyan;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .content {
+    width: 90%; /* Keep it responsive */
+    max-width: 1200px; /* Slightly wider */
+    padding: 50px 80px; /* Increase horizontal padding for a rectangular shape */
+    border: 2px solid black;
+    background-color: #20b2aa; /* Maintain theme */
+    border-radius: 20px; /* Softer rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Retain shadow */
+    margin: 40px auto; /* Increase margin for better spacing */
+    text-align: center;
+    color: black;
+}
+
+.ncc {
+    display: flex;
+    justify-content: flex-end; /* Aligns the image to the right */
+    margin-top: 30px; /* Adds spacing from the text */
+}
+
+.ncc img {
+    width: 150px; /* Adjust the size to make it smaller */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 30px; /* Optional: Adds soft rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds subtle shadow */
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Archita Srivastava's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#technical">Technical</a></li>
+                    <li><a href="#interships">Interships</a></li>
+                    <li><a href="#certificates">Certifications</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#worshops">Workshops</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection" id="home">
+            <div class="leftSection">
+                Hello there! I'm <span class="highlight">Archita Srivastava</span>
+                <div>
+                    Motivated and dedicated student seeking opportunities to apply my skills in a dynamic environment.
+                </div>
+                <span id="element"></span>
+            </div>
+            <div class="rightSection"><img src="profile.png.jpeg" alt="Profile Picture"></div>
+        </section>
+        <section class="content" id="about, projects, education, technical, internship, certifications, achievements, resume, workshops,">
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate web developer and designer with skills in databases and technical problem-solving.</p>
+        </section>
+        
+        <section class="section projects" id="projects">
+            <h2>Projects</h2>
+            <p><li> <b>Tic Tac Toe Game</b>: A responsive game for mobile and web, with alternating
+                turns, win and draw detection, and a smooth, user-friendly experience across
+                devices and screen sizes.</li></p>
+                <p><li><b>Notes website</b>: create, edit, store, and share notes online, providing a user
+               friendly platform for organizing thoughts, tasks, and information.</li></p>
+        </section>
+        
+        <section class="section education" id="education">
+            <h2>Education</h2>
+            <p> <li> BACHELOR OF ENGINEERING (CSE): GSSS Institute of Engineering and Technology for Women(VTU Affiliated) CGPA - 7.36</li>
+                <li> HIGHER SECONDARY EDUCATION: Jindal Vidya Mandir School Vidyanagar, Bellary – Karnataka(CBSE) with 63.4% in the year 2022</li>
+                <li> SECONDARY EDUCATION: Jindal Vidya Mandir School Vidyanagar, Bellary – Karnataka(CBSE) with 65.4% in the year 2020</li>
+                 </p>
+        </section>
+
+        <section class="section technical" id="technical">
+            <h2>Technicals</h2>
+            <p>
+                <li><b>PROGRAMMING
+                LANGUAGES:</b>C&Java(basics), Python(Intermediate).</li>
+                <li><b>WEB DEVELOPMENT:</b>MYSQL, HTML,CSS.</li>
+                <li><b>TOOLS</b>: Jupyter Notebook, SpyderIDE, Ubuntu, IntelliJ IDEA Community Edition 2023, VS code.</li>
+                <li><b>Version Control:</b> Git&GitHub</li>
+                <li><b>HackerRank</b>: Gold Badge in C, Python and Java,  BronzeBadge in SQL.</li>
+                <li><b>More</b>: Cyber Security(theory Intermediate)</li>
+            </p>
+        </section>
+
+        <section class="section interships" id="interships"> 
+            <h2>Interships</h2>
+            <p><li>Virtual <b>Web development</b> instership by <b>CodSoft</b> <b>from 25 February 2025 till 25th March 2025</b></li></p>
+        </section>
+
+        <section class="section certificates" id="certificates">
+            <h2>Certifications</h2>
+            <p><li>Training and certification from the World Leading Technology brands
+                AMAZON WEB SERVICES (AWS) Academy Data Engineering.<br></li>
+                 <li>Certified course from Sololearn: Introduction to C programming.<br></li>
+                <li>Certified course from Great learning: Introduction to Cyber security.<br></li>
+                 <li>Attended the AWS GENERATIVE AI IDEATHON organized by Aspire For
+                 Her in partnership with AWS.</li></p>
+        </section>
+        
+        <section class="section achievements" id="achievements">
+            <h2>Achievements</h2>
+            <p><li>Achieved B Certificate for <b>NATIONAL CADET CORPS (NCC) Army wing
+            with rank LANCE CORPORAL (L/CPL)</b>, by NCC Directorate: <b>Karnataka &
+            Goa.</b><br>
+            <div class="ncc">
+                <img src="ncc.png.jpeg" alt="">
+
+            </div>
+           <li>GSSSIETW Engineering College Elected for Secretary in Music club for the year
+            2022-2023 and organized and managed various cultural events etc.</li></p>
+
+        </section>
+        <section class="section resume" id="resume">
+            <h2>Resume</h2>
+            <iframe src="archita traditional resume till 5th sem.pdf" width="100%" height="600px"></iframe>
+
+        </section>
+        <section class="sectio worshops" id="worshops">
+            <h2>Workshops</h2>
+            <p><li>Completed 3 days National level Training program entitled “Cybersec
+            Bootcamp and CyberGuard” conducted by Dalvik Apps and Wecan
+            Education on 3rd December 2024. (Certified)<br></li>
+            <li>Attended 3 days Java workshop on 8th January 2024</li></p>
+        </section>
+        </section>
+        
+        <section class="section contact" id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: archita7srivastava@gmail.com</p>
+            <p>Phone Number: +918431566570</p>
+            <p>LinkedIn: https://www.linkedin.com/in/archita-srivastava-aa07512a2/</p>
+        </section>
+
+
+
+
+    </main>
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Web Developer', 'Web Designer','Database Enthusiast','Tech Enthusiast'],
+          typeSpeed: 50,
+          backSpeed: 25,
+          loop: true
+        });
+    </script>
+</body>
+</html>
